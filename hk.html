@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Odokonyero Paul Akim</title>
+    <!-- Tailwind CSS CDN for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base styles for the body, using Inter font and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for better visual integration with the dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a202c; /* Dark gray for the track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568; /* Medium gray for the thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096; /* Lighter gray on hover */
+        }
+        /* Keyframe animations for subtle entrance effects */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Apply animations to specific elements */
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navbar: Fixed at the top, dark background, and shadows for depth -->
+    <nav class="bg-gray-800 p-4 fixed w-full z-10 shadow-lg rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Brand/Logo: Your Name prominently displayed with a teal accent -->
+            <a href="#hero" class="text-2xl font-bold text-teal-400">ODOKONYERO PAUL AKIM</a>
+            <!-- Desktop Navigation Links: Hidden on mobile, spaced out -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">About</a>
+                <a href="#services" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Portfolio</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition duration-300 ease-in-out">Contact</a>
+            </div>
+            <!-- Mobile Menu Button: Hamburger icon for smaller screens -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none rounded-md p-2 hover:bg-gray-700 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu: Toggles visibility when the button is clicked -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2 px-2 pb-3 bg-gray-800 rounded-md shadow-inner">
+            <a href="#about" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">About</a>
+            <a href="#services" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Services</a>
+            <a href="#portfolio" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+            <a href="#contact" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Full screen height, centered content with background image overlay -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/2d3748/cbd5e0?text=YOUR+HERO+BACKGROUND');">
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <!-- Content container with glassmorphism-like effect -->
+        <div class="relative z-10 p-6 max-w-4xl mx-auto rounded-lg shadow-2xl bg-gray-800 bg-opacity-80 border-2 border-teal-600 backdrop-blur-sm">
+            <!-- Your profile photo -->
+            <img src="unnamed.png" alt="Your Photo" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-teal-400 object-cover">
+            <!-- Animated main heading with your name -->
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-down">Hi, I'm <span class="text-teal-400">Odokonyero Paul Akim</span></h1>
+            <!-- Animated description of your role -->
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up">A passionate <span class="text-purple-400">Website and App Designer/Assister</span> building awesome web experiences.</p>
+            <!-- Call-to-action buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#portfolio" class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 border-2 border-transparent">View My Work</a>
+                <!-- IMPORTANT: Replace 'path/to/your-cv.pdf' with the actual path to your CV file -->
+                <a href="https://www.cvwizard.com/d/693o9MMDIxGdC6XEzXcJNX/view" download="Odokonyero_Paul_Akim_CV.pdf" class="inline-block border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section: Detailed information about yourself -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-800 p-8 rounded-lg shadow-xl">
+                <div class="md:w-1/2">
+                    <!-- Placeholder for your About Me image -->
+                    <img src="unnamed.png" alt="About Me" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-gray-300">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Hello! My name is <span class="font-semibold text-white">Odokonyero Paul Akim</span>, and I'm a <span class="text-purple-400">Website and App Designer/Assister</span> with a strong passion for creating impactful and user-friendly digital solutions. I specialize in <span class="font-semibold text-white">Web Development (Frontend/Backend)</span> and have a keen interest in <span class="font-semibold text-white">UI/UX Design</span>.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Over the past <span class="font-semibold text-white">4 years</span>, I've had the opportunity to work on diverse projects, from small business websites to large-scale applications. My goal is always to deliver high-quality, scalable, and maintainable code that meets client needs and exceeds user expectations.
+                    </p>
+                    <!-- Personal details grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left mb-6 font-semibold">
+                        <p><strong>Name:</strong> <span class="text-white">Odokonyero Paul Akim</span></p>
+                        <p><strong>Age:</strong> <span class="text-white">16 years</span></p>
+                        <p><strong>Email:</strong> <span class="text-teal-400">hakimpaul53@gmail.com</span></p>
+                        <p><strong>Phone:</strong> <span class="text-white">+256 747 817 961</span></p>
+                        <p><strong>Address:</strong> <span class="text-white">Kampala, Uganda</span></p>
+                        <p><strong>Freelance:</strong> <span class="text-green-400">Available</span></p>
+                    </div>
+                    <!-- IMPORTANT: Replace 'path/to/your-cv.pdf' with the actual path to your CV file -->
+                    <a href="https://www.cvwizard.com/d/693o9MMDIxGdC6XEzXcJNX/view" download="Odokonyero_Paul_Akim_CV.pdf" class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 border-2 border-transparent">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section: What you offer as a professional -->
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1: Web Design -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300 ease-in-out border-b-4 border-purple-500">
+                    <i class="fas fa-desktop text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Web Design</h3>
+                    <p class="text-gray-400 text-base">Crafting beautiful, user-friendly, and responsive web interfaces that captivate your audience.</p>
+                </div>
+                <!-- Service Card 2: Web Development -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300 ease-in-out border-b-4 border-yellow-500">
+                    <i class="fas fa-code text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Web Development</h3>
+                    <p class="text-gray-400 text-base">Building robust, scalable, and efficient web applications using modern frameworks and technologies.</p>
+                </div>
+                <!-- Service Card 3: Mobile Development -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300 ease-in-out border-b-4 border-blue-500">
+                    <i class="fas fa-mobile-alt text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Mobile Development</h3>
+                    <p class="text-gray-400 text-base">Developing native or cross-platform mobile applications for iOS and Android devices.</p>
+                </div>
+                <!-- Service Card 4: Graphic Design -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300 ease-in-out border-b-4 border-green-500">
+                    <i class="fas fa-paint-brush text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Graphic Design</h3>
+                    <p class="text-gray-400 text-base">Creating visually stunning graphics, logos, and branding materials to elevate your presence.</p>
+                </div>
+                <!-- Service Card 5: SEO Marketing -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300 ease-in-out border-b-4 border-red-500">
+                    <i class="fas fa-chart-line text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">SEO Marketing</h3>
+                    <p class="text-gray-400 text-base">Optimizing your website to improve search engine rankings and drive organic traffic.</p>
+                </div>
+                <!-- Service Card 6: CMS & E-Commerce -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300 ease-in-out border-b-4 border-indigo-500">
+                    <i class="fas fa-shopping-cart text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-2">CMS & E-Commerce</h3>
+                    <p class="text-gray-400 text-base">Implementing and customizing content management systems and e-commerce platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section: Showcase your best projects -->
+    <section id="portfolio" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">My Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project Card 1: Example project -->
+                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
+                    <!-- Project image placeholder -->
+                    <img src="https://placehold.co/600x400/2d3748/cbd5e0?text=PROJECT+1+SCREENSHOT" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white mb-2">My Portfolio Website</h3>
+                        <p class="text-gray-400 mb-4">This website demonstrates responsive design, modern UI, and smooth navigation using Tailwind CSS.</p>
+                        <!-- Technologies used for this project -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-green-600 text-white text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <!-- IMPORTANT: Replace '#' with the actual URL to your Project 1 -->
+                        <a href="https://example.com/project1" target="_blank" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-5 py-2 rounded-full font-semibold text-sm">View Project</a>
+                    </div>
+                </div>
+                <!-- Project Card 2: Example project -->
+                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
+                    <!-- Project image placeholder -->
+                    <img src="https://placehold.co/600x400/2d3748/cbd5e0?text=PROJECT+2+SCREENSHOT" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white mb-2">School Management System</h3>
+                        <p class="text-gray-400 mb-4">A web application designed to streamline school administrative tasks and student management.</p>
+                        <!-- Technologies used for this project -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-600 text-white text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-yellow-600 text-white text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <!-- IMPORTANT: Replace '#' with the actual URL to your Project 2 -->
+                        <a href="https://example.com/project2" target="_blank" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-5 py-2 rounded-full font-semibold text-sm">View Project</a>
+                    </div>
+                </div>
+                <!-- Project Card 3: Example project -->
+                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700">
+                    <!-- Project image placeholder -->
+                    <img src="https://placehold.co/600x400/2d3748/cbd5e0?text=PROJECT+3+SCREENSHOT" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white mb-2">E-commerce Mobile App</h3>
+                        <p class="text-gray-400 mb-4">A user-friendly mobile application for online shopping with secure payment integrations.</p>
+                        <!-- Technologies used for this project -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-600 text-white text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-orange-600 text-white text-xs px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-lime-600 text-white text-xs px-3 py-1 rounded-full">Stripe API</span>
+                        </div>
+                        <!-- IMPORTANT: Replace '#' with the actual URL to your Project 3 -->
+                        <a href="https://example.com/project3" target="_blank" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-5 py-2 rounded-full font-semibold text-sm">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section: How clients can reach you -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 max-w-xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">Get in Touch</h2>
+            <div class="bg-gray-700 p-8 rounded-lg shadow-xl border border-gray-600">
+                <p class="text-lg text-gray-300 text-center mb-6">Have a question or want to work together? Fill out the form below or connect with me via email/social media.</p>
+                <!-- Contact form: Now using mailto: for basic functionality -->
+                <!-- For a more robust solution, consider Formspree.io or Netlify Forms -->
+                <form action="mailto:hakimpaul53@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-900 border-gray-600 text-white placeholder-gray-500" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-900 border-gray-600 text-white placeholder-gray-500" placeholder="your.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-900 border-gray-600 text-white placeholder-gray-500" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105">Send Message</button>
+                </form>
+                <!-- Social media links -->
+                <div class="mt-8 text-center">
+                    <p class="text-gray-300 mb-4">Alternatively, find me on:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="mailto:hakimpaul53@gmail.com" class="text-teal-400 hover:text-white transition duration-300 ease-in-out text-3xl" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-teal-400 hover:text-white transition duration-300 ease-in-out text-3xl" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/yourprofile" target="_blank" class="text-teal-400 hover:text-white transition duration-300 ease-in-out text-3xl" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hakimpaul202" target="_blank" class="text-teal-400 hover:text-white transition duration-300 ease-in-out text-3xl" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Copyright information -->
+    <footer class="bg-gray-900 py-8 text-gray-400 text-center rounded-t-lg">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 Odokonyero Paul Akim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for smooth scrolling and mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default anchor click behavior
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth' // Smooth scroll effect
+                        });
+                        // Close mobile menu if it's open after clicking a link
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Toggle mobile menu visibility
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden'); // Toggle hidden class to show/hide menu
+                });
+            }
+        });
+    </script>
+</body>
+</html>
